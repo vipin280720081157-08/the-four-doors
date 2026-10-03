@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Four Doors — An AI Escape & Reasoning Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/ui/style.css">
+</head>
+<body>
+<section id="menu" class="screen">
+  <div class="brandcol">
+    <h1>THE<br>FOUR<br>DOORS</h1>
+    <p class="tag">An AI Escape &amp; Reasoning Game</p>
+    <p class="verbs">Explore • Reason • Solve • Escape</p>
+  </div>
+  <nav class="menucol" aria-label="Main menu">
+    <button class="mbtn first" data-act="intro">BEGIN ADVENTURE</button>
+    <button class="mbtn" data-act="how">HOW TO PLAY</button>
+    <button class="mbtn" data-act="about">ABOUT AI</button>
+    <button class="mbtn" data-act="exit">EXIT</button>
+  </nav>
+</section>
+
+<div id="game" class="screen" hidden>
+  <header class="bar">
+    <div class="brand">THE FOUR DOORS</div>
+    <div class="obj"><span class="lbl">Objective</span><span id="objective"></span></div>
+    <div class="meta"><span id="att" title="Seals remaining: each mistake breaks one"></span><span id="chlabel"></span></div>
+  </header>
+  <div class="main">
+    <div id="stage" data-ch="1">
+      <canvas id="cv" width="912" height="528"></canvas>
+      <div id="lock" hidden></div>
+      <div id="toast"></div>
+    </div>
+    <aside id="agent" aria-label="AI Agent"></aside>
+  </div>
+  <footer class="bar hud" id="hud"></footer>
+</div>
+<div id="overlay" hidden></div>
+
+<script src="src/ai/kb.js"></script>
+<script src="src/csp/symbolLock.js"></script>
+<script src="src/pathfinding/astar.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
